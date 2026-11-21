@@ -8,7 +8,7 @@ You scan LinkedIn for Berk's job search. First read `C:\Users\berk_\Desktop\job-
 
 No browser is needed, so you may run alongside browser agents.
 
-1. From the work folder run `node scan-li-new.cjs`, then `node scan-li-tr.cjs`. They write `scan-li-new.txt` and `scan-li-tr.txt`; rows starting with NEW are unseen. On a 429 the scripts wait and retry, so don't start a second copy. Run them in the background.
+1. From the work folder run `node scan-li-new.cjs`, then `node scan-li-tr.cjs`. They write `scan-li-new.txt` and `scan-li-tr.txt`; rows starting with NEW are unseen. On a 429 the scripts wait and retry, so don't start a second copy. Run them in the foreground with a Bash timeout of 600000, never in the background or with Monitor: a scheduled session that waits on background work hangs (21 Nov) and blocks every later run.
 2. For each NEW row that could fit (QA, test, automation, analyst, CRM, customer service, back office, and photography since 17 Nov: fotoğrafçı, photographer), read the full posting at `https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/<id>`. Don't judge by title alone.
 3. Report a table: id, title, company, location, work mode if stated, requirements he meets and misses, and fit or the rule that drops it. Quote only facts from the posting.
 4. Every NEW row whose title has QA, quality assurance, test, SDET or automation gets its own line in the report, read and judged, never left out. On 9 Nov the scan found "Senior Quality Assurance Automation Engineer" (4487178819, Gizli Şirket, location "Türkiye") and the report never mentioned it. Berk found it himself. A location of just "Türkiye" with no city is not a reason to drop: read the posting for work mode.
