@@ -5,7 +5,7 @@ description: Berk Kaldar's job search workflow - scanning job sites, writing CVs
 
 # Berk's job search
 
-1. **Read the rules first:** `C:\Users\berk_\Desktop\FoodieProject\.claude\worktrees\cv-to-latex-7a5459\.playwright-mcp\memory.md`. It holds every standing rule, the security limits, the site table and the fixes log. Where an older file disagrees, memory.md wins. Put every new rule Berk gives there, with the date.
+1. **Read the rules first:** `C:\Users\berk_\Desktop\job-search-work\memory.md`. It holds every standing rule, the security limits, the site table and the fixes log. Where an older file disagrees, memory.md wins. Put every new rule Berk gives there, with the date.
 2. **Don't ask Berk** unless something is extreme (10 Nov). Things only he can do go on one grouped list: passwords, CAPTCHAs, codes, TC kimlik, his birth date, abroad knockout wording.
 
 ## The loop

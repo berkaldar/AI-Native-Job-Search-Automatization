@@ -9,7 +9,7 @@ Do everything yourself in this session, in the foreground. Do not spawn subagent
 
 Folders:
 - Outreach files: C:\Users\berk_\Desktop\Berk CV\US_Outreach
-- Work folder: C:\Users\berk_\Desktop\FoodieProject\.claude\worktrees\cv-to-latex-7a5459\.playwright-mcp
+- Work folder: C:\Users\berk_\Desktop\job-search-work
 
 Step 0: queue check. Read the work folder's us-outreach-queue.json. If 15 or more items are still "pending", stop and reply "queue still full". There is no need to add more.
 
@@ -29,7 +29,7 @@ Step 2: writer. Write batch<N>-emails.md with exactly the same structure as batc
 - Use only facts that are in batch1-emails.md. Never invent experience, numbers or names.
 - Write "Turkey", never "Türkiye". Never suggest Berk lives in the US or is authorized to work there. No SSN, no US address, and never mention a friend.
 
-Step 3: checks. Run node C:/Users/berk_/Desktop/FoodieProject/.claude/worktrees/cv-to-latex-7a5459/.playwright-mcp/build-us-outreach.cjs
+Step 3: checks. Run node C:/Users/berk_/Desktop/job-search-work/build-us-outreach.cjs
 - It validates every e-mail (greeting, forbidden words, .edu addresses, no address e-mailed twice) and appends the new items to the queue, keeping all earlier statuses.
 - If it fails, fix batch<N>-emails.md (never the script) and run it again.
 - If it still fails after 3 tries, rename the file to batch<N>-emails.REJECTED.md, run the script once more so the queue is clean, and add a todo (step 4).

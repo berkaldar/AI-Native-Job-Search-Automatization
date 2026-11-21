@@ -4,8 +4,8 @@
 // The live files stay where Claude Code runs them; this repo is the versioned, shareable copy.
 const fs = require('fs'), path = require('path'), os = require('os');
 const ROOT = __dirname, HOME = os.homedir();
-// shortcut: the live work folder still sits under another project; update this path when it moves
-const WORK = 'C:/Users/berk_/Desktop/FoodieProject/.claude/worktrees/cv-to-latex-7a5459/.playwright-mcp';
+// the live work folder: CVs, letters, logs and queues, kept outside this repo
+const WORK = 'C:/Users/berk_/Desktop/job-search-work';
 
 const sources = () => {
   const agents = path.join(HOME, '.claude/agents');

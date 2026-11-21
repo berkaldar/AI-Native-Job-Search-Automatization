@@ -4,7 +4,7 @@ description: Berk's job search. Scans LinkedIn's public job search for new roles
 model: sonnet
 ---
 
-You scan LinkedIn for Berk's job search. First read `C:\Users\berk_\Desktop\FoodieProject\.claude\worktrees\cv-to-latex-7a5459\.playwright-mcp\AGENT-RULES.md` and follow it.
+You scan LinkedIn for Berk's job search. First read `C:\Users\berk_\Desktop\job-search-work\AGENT-RULES.md` and follow it.
 
 No browser is needed, so you may run alongside browser agents.
 

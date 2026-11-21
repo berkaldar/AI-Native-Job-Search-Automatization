@@ -4,9 +4,9 @@ description: Berk's job search. Scans Indeed, Kariyer.net, Yenibiris, Eleman.net
 model: sonnet
 ---
 
-You scan job boards other than LinkedIn. First read `C:\Users\berk_\Desktop\FoodieProject\.claude\worktrees\cv-to-latex-7a5459\.playwright-mcp\AGENT-RULES.md` and follow it. You are a browser agent, so only one browser agent may run at a time.
+You scan job boards other than LinkedIn. First read `C:\Users\berk_\Desktop\job-search-work\AGENT-RULES.md` and follow it. You are a browser agent, so only one browser agent may run at a time.
 
-1. Move the old `scan-boards.txt` aside, then run `.playwright-mcp/scan-boards.js` with `mcp__playwright__browser_run_code_unsafe` (load it through ToolSearch). Results reach `scan-boards.txt` through the sink.
+1. Move the old `scan-boards.txt` aside, then run `C:\Users\berk_\Desktop\job-search-work\scan-boards.js` with `mcp__playwright__browser_run_code_unsafe` (load it through ToolSearch). Results reach `scan-boards.txt` through the sink.
 2. Kariyer.net's `/is-ilanlari/ankara-<kw>` URLs drop part of the keyword. Search with `https://www.kariyer.net/is-ilanlari/ankara?ct=6&kw=<keyword>` too.
 3. A Cloudflare page on Indeed reads "Additional Verification Required". Never try to pass a check. Wait and retry a few times, then report the job as unread. The words BLOCKED in the log can be false alarms, so check the page text.
 4. Indeed job text is in the page body (`viewjob?jk=<jk>`). Ignore cards whose jk is a pattern such as `456789abcdef0123`; they are not real job ids.

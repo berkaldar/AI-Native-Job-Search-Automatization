@@ -5,8 +5,8 @@ description: Runs Berk's LinkedIn scan every hour and records kept postings on t
 
 Hourly LinkedIn scan for Berk's job search. Work only on scanning and recording. Never apply, never write or send a cover letter, never message anyone, and never use a browser.
 
-Shared rules: C:\Users\berk_\Desktop\FoodieProject\.claude\worktrees\cv-to-latex-7a5459\.playwright-mcp\AGENT-RULES.md
-Work folder: C:\Users\berk_\Desktop\FoodieProject\.claude\worktrees\cv-to-latex-7a5459\.playwright-mcp
+Shared rules: C:\Users\berk_\Desktop\job-search-work\AGENT-RULES.md
+Work folder: C:\Users\berk_\Desktop\job-search-work
 
 Do all of this yourself in this session, in the foreground. Do not spawn subagents and do not use run_in_background: this session ends as soon as your turn does, and that killed every earlier scan seconds after it started, with the run still shown as succeeded.
 
