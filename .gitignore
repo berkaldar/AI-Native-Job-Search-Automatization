@@ -1,0 +1,15 @@
+# Personal data never goes in this repo: CVs, cover letters, answer files, logs, queues, browser snapshots.
+node_modules/
+*.pdf
+*.docx
+*.tex
+*.log
+*.png
+*.jpg
+*.jpeg
+*.ids
+*-queue.json
+*-log.txt
+us-send-*.js
+us-dry-*.js
+.env

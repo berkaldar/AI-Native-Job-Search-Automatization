@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Syntax check
+        run: for f in $(git ls-files '*.cjs'); do node --check "$f"; done
+      - name: Personal-data guard
+        run: node sync.cjs --check
+      - name: Agent, skill and task definitions
+        run: node tests/definitions.test.cjs
+      - name: Outreach pacing self-test
+        run: node scripts/us-outreach/us-outreach-step.cjs selftest
+      - name: Outreach builder tests
+        run: node tests/us-outreach.test.cjs
