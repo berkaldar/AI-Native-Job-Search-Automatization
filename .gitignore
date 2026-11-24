@@ -13,3 +13,4 @@ node_modules/
 us-send-*.js
 us-dry-*.js
 .env
+/work/

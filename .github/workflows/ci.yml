@@ -17,6 +17,8 @@ jobs:
           node-version: 22
       - name: Syntax check
         run: for f in $(git ls-files '*.cjs'); do node --check "$f"; done
+      - name: Nothing under work/ is tracked
+        run: test -z "$(git ls-files work)"
       - name: Personal-data guard
         run: node sync.cjs --check
       - name: Agent, skill and task definitions

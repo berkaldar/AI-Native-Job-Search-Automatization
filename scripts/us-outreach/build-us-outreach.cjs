@@ -5,7 +5,7 @@
 const fs = require('fs'), path = require('path'), assert = require('assert');
 // env overrides let CI run the builder on test fixtures; defaults are the live folders
 const OUT = process.env.US_OUTREACH_DIR || 'C:/Users/berk_/Desktop/Berk CV/US_Outreach';
-const WORK = process.env.US_WORK_DIR || __dirname;
+const WORK = process.env.US_WORK_DIR || path.join(__dirname, '../../work');
 const PDF = path.resolve(WORK, 'Berk_Kaldar_Resume_Student_Support.pdf').replace(/\\/g, '/');
 const ROWS1 = ['us-ucf', 'us-fhsu', 'us-csuglobal', 'us-louisville', 'us-unf', 'us-psu', 'us-msu', 'us-missouri', 'us-arizona', 'us-uwex', 'us-gcu', 'us-oregonstate'];
 const FORBIDDEN = /Türkiye|COMMON BLOCK|\{\{|SSN|social security|green card|US citizen|permanent resident|my friend/i;

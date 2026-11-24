@@ -9,11 +9,11 @@ Do everything yourself in this session, in the foreground. Do not spawn subagent
 
 Folders:
 - Outreach files: C:\Users\berk_\Desktop\Berk CV\US_Outreach
-- Work folder: C:\Users\berk_\Desktop\job-search-work
+- Work folder: C:\Users\berk_\Desktop\AI-Native-Job-Search-Automatization\work
 
 Step 0: queue check. Read the work folder's us-outreach-queue.json. If 15 or more items are still "pending", stop and reply "queue still full". There is no need to add more.
 
-Step 1: University HR Scanner. Read and follow C:\Users\berk_\.claude\agents\job-scan-universities.md.
+Step 1: University HR Scanner. Read and follow C:\Users\berk_\Desktop\AI-Native-Job-Search-Automatization\.claude\agents\job-scan-universities.md.
 - Find up to 10 NEW US universities. Skip every university and address already in batch*-targets.md or batch*-emails.md in the outreach folder.
 - Prefer online student success, coaching or advising teams, and international student offices.
 - Every address must be read on an official .edu page; never guess one. Give the source URL for each.
@@ -29,12 +29,12 @@ Step 2: writer. Write batch<N>-emails.md with exactly the same structure as batc
 - Use only facts that are in batch1-emails.md. Never invent experience, numbers or names.
 - Write "Turkey", never "Türkiye". Never suggest Berk lives in the US or is authorized to work there. No SSN, no US address, and never mention a friend.
 
-Step 3: checks. Run node C:/Users/berk_/Desktop/job-search-work/build-us-outreach.cjs
+Step 3: checks. Run node C:/Users/berk_/Desktop/AI-Native-Job-Search-Automatization/scripts/us-outreach/build-us-outreach.cjs
 - It validates every e-mail (greeting, forbidden words, .edu addresses, no address e-mailed twice) and appends the new items to the queue, keeping all earlier statuses.
 - If it fails, fix batch<N>-emails.md (never the script) and run it again.
 - If it still fails after 3 tries, rename the file to batch<N>-emails.REJECTED.md, run the script once more so the queue is clean, and add a todo (step 4).
 
-Step 4: dashboard (follow the US part of C:\Users\berk_\.claude\agents\job-tracker.md). Load ArtifactData with ToolSearch. The dashboard is https://claude.ai/artifact/CSGfpQnaFocneQF8rqE2EL. Read each doc first and pass its version as if_version.
+Step 4: dashboard (follow the US part of C:\Users\berk_\Desktop\AI-Native-Job-Search-Automatization\.claude\agents\job-tracker.md). Load ArtifactData with ToolSearch. The dashboard is https://claude.ai/artifact/CSGfpQnaFocneQF8rqE2EL. Read each doc first and pass its version as if_version.
 - For each new row, create jobs/us-<slug>:
   - company (the university), title (the unit and contact), location "Remote from Turkey · contractor";
   - group "us", kind "outreach", fit "unchecked", applied false, pipe "apply", url (the unit's source page), hrTo (if any);

@@ -7,11 +7,11 @@ One run of Berk Kaldar's US university outreach sender (Flow 2 of his job search
 
 Do everything yourself in this session, in the foreground. Do not spawn subagents and do not use run_in_background: a scheduled session ends when your turn ends, and that kills background work.
 
-Work folder: C:\Users\berk_\Desktop\job-search-work
-Read and follow C:\Users\berk_\.claude\agents\job-outreach-us.md (the sender). Then follow the "US university outreach" part of C:\Users\berk_\.claude\agents\job-tracker.md (the dashboard).
+Work folder: C:\Users\berk_\Desktop\AI-Native-Job-Search-Automatization\work
+Read and follow C:\Users\berk_\Desktop\AI-Native-Job-Search-Automatization\.claude\agents\job-outreach-us.md (the sender). Then follow the "US university outreach" part of C:\Users\berk_\Desktop\AI-Native-Job-Search-Automatization\.claude\agents\job-tracker.md (the dashboard).
 
 1. Send step (job-outreach-us.md):
-   - Run: node --use-system-ca "C:\Users\berk_\Desktop\job-search-work\us-outreach-step.cjs" next
+   - Run: node --use-system-ca "C:\Users\berk_\Desktop\AI-Native-Job-Search-Automatization\scripts\us-outreach\us-outreach-step.cjs" next
    - If the action is "skip" or "done": stop. Reply with one line giving the reason. Write nothing to the dashboard.
    - If the action is "send": do what job-outreach-us.md says. Run the runFile with mcp__playwright__browser_run_code_unsafe (the filename parameter set to the full path). Then pass the returned JSON to "us-outreach-step.cjs mark <id> '<json>'". Then call mcp__playwright__browser_close.
 2. Dashboard step (job-tracker.md). Load ArtifactData with ToolSearch. The dashboard is https://claude.ai/artifact/CSGfpQnaFocneQF8rqE2EL. Read each doc first and pass its version as if_version.

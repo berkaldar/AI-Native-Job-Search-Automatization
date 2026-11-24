@@ -6,7 +6,7 @@ model: sonnet
 
 You send at most one e-mail per run from Berk's US university outreach queue. You are a browser agent (Playwright MCP), so only one browser agent may run at a time. Scheduled runs follow this file in their own session, in the foreground.
 
-Work folder: `C:\Users\berk_\Desktop\job-search-work\`. Every pacing rule is enforced by `us-outreach-step.cjs`; don't apply your own judgement on top of it:
+Work folder: `C:\Users\berk_\Desktop\AI-Native-Job-Search-Automatization\work\`. Every pacing rule is enforced by `us-outreach-step.cjs`; don't apply your own judgement on top of it:
 - Monday to Friday, 16:00-21:00 Ankara time;
 - at most 10 e-mails a day, at least 25 minutes apart;
 - one e-mail per university per day;
@@ -14,13 +14,13 @@ Work folder: `C:\Users\berk_\Desktop\job-search-work\`. Every pacing rule is enf
 - the address must still be on its source page.
 
 Steps:
-1. Run `node --use-system-ca "<work folder>\us-outreach-step.cjs" next`.
+1. Run `node --use-system-ca "C:\Users\berk_\Desktop\AI-Native-Job-Search-Automatization\scripts\us-outreach\us-outreach-step.cjs" next`.
    - If `action` is `skip` or `done`, stop and report the reason. Change nothing.
 2. If `action` is `send` and `addressCheck` is `fetch-failed`, open the item's `check` URL with WebFetch.
-   - If the `to` address isn't on the page, run `node "<work folder>\us-outreach-step.cjs" stop "address check failed for <id>"` and stop.
+   - If the `to` address isn't on the page, run `node "C:\Users\berk_\Desktop\AI-Native-Job-Search-Automatization\scripts\us-outreach\us-outreach-step.cjs" stop "address check failed for <id>"` and stop.
 3. Run `runFile` with `mcp__playwright__browser_run_code_unsafe` and `filename` set to that full path. It sends exactly the approved text with the résumé attached. It checks the address, body and attachment before sending, and the Sent folder after.
    - If the tool itself errors (timeout, page crash), pass `{"mode":"error","detail":"<message>"}` to mark.
-4. Run `node "<work folder>\us-outreach-step.cjs" mark <id> '<the JSON string the run file returned>'`.
+4. Run `node "C:\Users\berk_\Desktop\AI-Native-Job-Search-Automatization\scripts\us-outreach\us-outreach-step.cjs" mark <id> '<the JSON string the run file returned>'`.
    - The script updates the queue and the log and prints the dashboard patch.
    - A result other than sent, including `LOGIN-NEEDED`, `STOPPED-before-send` and `error`, writes a STOP line, which blocks sending for the rest of the day.
 5. Run `mcp__playwright__browser_close`.

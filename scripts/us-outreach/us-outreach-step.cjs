@@ -6,7 +6,7 @@
 // Pacing: Mon-Fri 16:00-21:00 Ankara, max 10 a day, 25+ minutes apart, one e-mail per university per day,
 // HR e-mail only on a later day than that university's student support e-mail.
 const fs = require('fs'), path = require('path'), assert = require('assert');
-const DIR = __dirname;
+const DIR = process.env.US_WORK_DIR || path.join(__dirname, '../../work'); // private data lives in work/ (not in git)
 const QF = path.join(DIR, 'us-outreach-queue.json'), LOG = path.join(DIR, 'us-outreach-log.txt');
 const CAP = 10, GAP_MIN = 25, START_H = 16, END_H = 21;
 

@@ -6,14 +6,14 @@ const front = (file) => {
   assert(m, file + ': no frontmatter');
   return Object.fromEntries(m[1].split(/\r?\n/).map((l) => l.match(/^(\w+):\s*(.*)$/)).filter(Boolean).map((x) => [x[1], x[2]]));
 };
-const agents = fs.readdirSync(path.join(ROOT, 'agents')).filter((f) => f.endsWith('.md'));
+const agents = fs.readdirSync(path.join(ROOT, '.claude/agents')).filter((f) => f.endsWith('.md'));
 assert(agents.length >= 10, 'agents missing');
 for (const f of agents) {
-  const fm = front(path.join(ROOT, 'agents', f));
+  const fm = front(path.join(ROOT, '.claude/agents', f));
   assert.strictEqual(fm.name, f.replace(/\.md$/, ''), f + ': name must match the file name');
   assert(fm.description && fm.description.length > 30, f + ': description too short');
 }
-const skill = front(path.join(ROOT, 'skills/job-search/SKILL.md'));
+const skill = front(path.join(ROOT, '.claude/skills/job-search/SKILL.md'));
 assert(skill.name && skill.description, 'job-search skill frontmatter');
 for (const t of fs.readdirSync(path.join(ROOT, 'scheduled-tasks'))) {
   assert(fs.readFileSync(path.join(ROOT, 'scheduled-tasks', t, 'SKILL.md'), 'utf8').trim().length > 200, t + ': empty task prompt');

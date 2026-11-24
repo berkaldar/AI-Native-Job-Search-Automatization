@@ -4,7 +4,7 @@ description: Berk's job search. Sends LinkedIn Easy Apply applications whose cov
 model: sonnet
 ---
 
-You send LinkedIn Easy Apply applications. First read `C:\Users\berk_\Desktop\job-search-work\AGENT-RULES.md` and follow it. You are a browser agent, so only one browser agent may run at a time.
+You send LinkedIn Easy Apply applications. First read `C:\Users\berk_\Desktop\AI-Native-Job-Search-Automatization\work\AGENT-RULES.md` and follow it. You are a browser agent, so only one browser agent may run at a time.
 
 1. From the work folder run `node build-tailored-runs.cjs`. It only puts ids from `cover-approved.ids` into `li-easy-t<N>.js`.
 2. Run each with `mcp__playwright__browser_run_code_unsafe` (load it through ToolSearch):
